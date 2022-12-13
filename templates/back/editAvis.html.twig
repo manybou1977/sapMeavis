@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+    {{ parent() }}EditAvis
+
+{% endblock %}
+
+{% block body %}
+
+    {{  form_start(form)  }}
+    {{  form_row(form.note)  }}
+    {{  form_row(form.commentaire) }}
+    {{  form_row(form.enregistrer)  }}
+    {{  form_end(form)  }}
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+    {{ parent() }} Gestion Avis
+
+{% endblock %}
+
+{% block body %}
+
+<table class="table table-primary table-striped">
+    <thead>
+
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">note</th>
+        <th scope="col">Commentaire</th>
+        <th scope="col">valider</th>
+
+
+
+    </tr>
+
+    </thead>
+    <tbody>
+
+    {% for avis in avis %}
+        <tr>
+            <th scope="row">{{ avis.id }}</th>
+            <td>{{ avis.note }}</td>
+            <td>{{ avis.commentaire }}</td>
+            <td><a href="{{ path('editAvis', {'id': avis.id}) }}" class="btn btn-info">Modifier</a>
+                <a href="{{ path('deleteAvis', {'id': avis.id}) }}" onclick="return confirm('Êtes-vous sûr?')" class="btn btn-danger">Supprimer</a>
+            </td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+
+
+
+
+
+{% endblock %}
